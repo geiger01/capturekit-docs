@@ -1,0 +1,87 @@
+# Getting Started
+
+Welcome to CaptureKit! This guide will walk you through setting up and making your first API request. In just a few minutes, you'll be able to capture screenshots, extract structured content, and analyze webpages using our API.
+
+## 1. Get Your Access Key 🔑
+
+To start using CaptureKit, you'll need an Access Token. Follow these steps:
+
+1. **Sign up** at [CaptureKit Dashboard](https://capturekit.dev/login)
+2. **Copy your Access Key** from the project `Access Keys` tab.
+
+You'll need this key to authenticate your API requests.
+
+## 2. Make Your First API Request
+
+> **Note:** You can make requests using either GET or POST methods.
+
+
+### Screenshot API
+
+```bash copy
+GET https://api.capturekit.dev/capture?access_key=<<your-access-key>>&url=https://tailwindcss.com
+```
+
+#### Response
+
+![Screenshot Example](/tailwind-hero.png)
+
+### Content API
+
+```bash copy
+GET https://api.capturekit.dev/content?access_key=<<your-access-key>>&url=https://tailwindcss.com
+```
+
+#### Response
+
+```json
+{
+	"success": true,
+	"data": {
+		"metadata": {
+			"title": "Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.",
+			"description": "Tailwind CSS is a utility-first CSS framework.",
+			"favicon": "https://tailwindcss.com/favicons/favicon-32x32.png",
+			"ogImage": "https://tailwindcss.com/opengraph-image.jpg"
+		},
+		"links": {
+			"internal": ["https://tailwindcss.com/", "https://tailwindcss.com/docs"],
+			"external": ["https://tailwindui.com", "https://shopify.com"],
+			"social": [
+				"https://github.com/tailwindlabs/tailwindcss",
+				"https://x.com/tailwindcss"
+			]
+		}
+	}
+}
+```
+
+### AI Content Analysis API
+
+```bash copy
+GET https://api.capturekit.dev/analyze?access_key=<<your-access-key>>&url=https://tailwindcss.com
+```
+
+#### Response
+
+```json
+{
+	"success": true,
+	"data": {
+		"summary": "Tailwind CSS is a utility-first CSS framework for modern web design.",
+		"valueProposition": "A flexible CSS framework packed with utility classes.",
+		"keyFeatures": [
+			"Responsive design",
+			"Dark mode",
+			"Animations",
+			"Grid layout"
+		],
+		"useCases": [
+			"Building websites",
+			"Customizing themes",
+			"Managing CSS specificity"
+		],
+		"targetAudience": "Web developers and designers."
+	}
+}
+```
