@@ -9,17 +9,20 @@ To start using CaptureKit, you'll need an Access Token. Follow these steps:
 1. **Sign up** at [CaptureKit Dashboard](https://capturekit.dev/login)
 2. **Copy your Access Key** from the project `Access Keys` tab.
 
-You'll need this key to authenticate your API requests.
+You can attach your access key to requests in any of these ways:
+
+- `GET` parameter: `access_key`
+- `POST` parameter: `access_key`
+- `Header`: `x-access-key`
 
 ## 2. Make Your First API Request
 
 > **Note:** You can make requests using either GET or POST methods.
 
-
 ### Screenshot API
 
 ```bash copy
-GET https://api.capturekit.dev/capture?access_key=<<your-access-key>>&url=https://tailwindcss.com
+GET https://api.capturekit.dev/capture?access_key=<your-access-key>&url=https://tailwindcss.com
 ```
 
 #### Response
@@ -29,7 +32,7 @@ GET https://api.capturekit.dev/capture?access_key=<<your-access-key>>&url=https:
 ### Content API
 
 ```bash copy
-GET https://api.capturekit.dev/content?access_key=<<your-access-key>>&url=https://tailwindcss.com
+GET https://api.capturekit.dev/content?access_key=<your-access-key>&url=https://tailwindcss.com
 ```
 
 #### Response
@@ -59,7 +62,7 @@ GET https://api.capturekit.dev/content?access_key=<<your-access-key>>&url=https:
 ### AI Content Analysis API
 
 ```bash copy
-GET https://api.capturekit.dev/analyze?access_key=<<your-access-key>>&url=https://tailwindcss.com
+GET https://api.capturekit.dev/analyze?access_key=<your-access-key>&url=https://tailwindcss.com
 ```
 
 #### Response

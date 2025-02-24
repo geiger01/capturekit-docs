@@ -1,0 +1,100 @@
+# Content API
+
+The Content API allows you to extract structured data from any webpage, including metadata, links, and raw HTML.
+
+## Endpoint
+
+```bash copy
+https://api.capturekit.dev/content
+```
+
+#### Example Request
+
+```bash copy
+GET https://api.capturekit.dev/content?access_key=<your-access-key>&url=https://tailwindcss.com
+```
+
+#### Response
+
+```json
+{
+	"success": true,
+	"data": {
+		"metadata": {
+			"title": "Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.",
+			"description": "Tailwind CSS is a utility-first CSS framework.",
+			"favicon": "https://tailwindcss.com/favicons/favicon-32x32.png",
+			"ogImage": "https://tailwindcss.com/opengraph-image.jpg"
+		},
+		"links": {
+			"internal": ["https://tailwindcss.com/", "https://tailwindcss.com/docs"],
+			"external": ["https://tailwindui.com", "https://shopify.com"],
+			"social": [
+				"https://github.com/tailwindlabs/tailwindcss",
+				"https://x.com/tailwindcss"
+			]
+		},
+		"html": "<html><body><h1>Hello, world!</h1></body></html>"
+	}
+}
+```
+
+## Parameters
+
+**`url`** <small style={{margin:'0 10px'}}>string</small> <small style={{color: 'red'}}>Required</small><br/>
+The URL of the webpage to capture.
+
+---
+
+**`access_key`** <small style={{margin:'0 10px'}}>string</small> <small style={{color: 'red'}}>Required</small><br/>
+Your API access key. Can be provided via the `access_key` query parameter, `x-access-key` header, or request body.
+
+---
+
+**`include_html`** <small style={{margin:'0 10px'}}>boolean</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to false</small><br/>
+Include the raw HTML of the webpage in the response.
+
+---
+
+**`delay`** <small style={{margin:'0 10px'}}>number</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to 0</small><br/>
+Delay in seconds before capturing the screenshot (max `10s`).
+
+---
+
+**`wait_until`** <small style={{margin:'0 10px'}}>string</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <br/>
+Define when to capture (`networkidle2`, `load`, `domcontentloaded`, `networkidle0`).
+
+---
+
+**`wait_for_selector`** <small style={{margin:'0 10px'}}>string</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <br/>
+Wait for a specific element to appear before taking the screenshot.
+
+---
+
+**`remove_selectors`** <small style={{margin:'0 10px'}}>string</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <br/>
+A comma-separated list of elements to hide before capturing (e.g., ads, popups).
+
+---
+
+**`cache`** <small style={{margin:'0 10px'}}>boolean</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to false</small><br/>
+Cache the response.
+
+---
+
+**`cache_ttl`** <small style={{margin:'0 10px'}}>number</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to 2592000</small><br/>
+Cache the response for a custom TTL (in seconds). Maximum `2592000` seconds (1 month), minimum `3600` seconds (1 hour).
+
+---
+
+**`remove_cookie_banners`** <small style={{margin:'0 10px'}}>boolean</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to false</small><br/>
+Automatically remove cookie banners before capturing.
+
+---
+
+**`viewport_width`** <small style={{margin:'0 10px'}}>number</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to 1280</small><br/>
+The width of the browser viewport in pixels.
+
+---
+
+**`viewport_height`** <small style={{margin:'0 10px'}}>number</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to 1024</small><br/>
+The height of the browser viewport in pixels.
