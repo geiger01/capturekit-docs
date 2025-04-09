@@ -32,7 +32,7 @@ GET https://api.capturekit.dev/capture?access_key=<your-access-key>&url=https://
 ### Content API
 
 ```bash copy
-GET https://api.capturekit.dev/content?access_key=<your-access-key>&url=https://tailwindcss.com
+GET https://api.capturekit.dev/content?access_key=<your-access-key>&url=https://capturekit.dev
 ```
 
 #### Response
@@ -42,17 +42,36 @@ GET https://api.capturekit.dev/content?access_key=<your-access-key>&url=https://
 	"success": true,
 	"data": {
 		"metadata": {
-			"title": "Tailwind CSS - Rapidly build modern websites without ever leaving your HTML.",
-			"description": "Tailwind CSS is a utility-first CSS framework.",
-			"favicon": "https://tailwindcss.com/favicons/favicon-32x32.png",
-			"ogImage": "https://tailwindcss.com/opengraph-image.jpg"
+			"title": "CaptureKit - Turn any website into a screenshot with our powerful Screenshot API",
+			"description": "CaptureKit is a powerful API for capturing screenshots, extracting HTML, gathering links, and summarizing content—all with a simple request.",
+			"favicon": "https://capturekit.dev/favicon.ico",
+			"ogImage": "https://capturekit-assets.s3.amazonaws.com/capturekit-og+(1).png"
 		},
 		"links": {
-			"internal": ["https://tailwindcss.com/", "https://tailwindcss.com/docs"],
-			"external": ["https://tailwindui.com", "https://shopify.com"],
+			"internal": [
+				"https://capturekit.dev/",
+				"https://capturekit.dev/dashboard",
+				"https://capturekit.dev/pricing",
+				"https://capturekit.dev/blog"
+			],
+			"external": [
+				"https://docs.capturekit.dev",
+				"https://zapier.com/apps/capturekit-website-screenshots-p/integrations",
+				"https://www.nextupkit.com"
+			],
 			"social": [
-				"https://github.com/tailwindlabs/tailwindcss",
-				"https://x.com/tailwindcss"
+				"https://github.com/CaptureKit-Web-Scraping-API",
+				"https://x.com/capturekit"
+			]
+		},
+		"html": "<html><body><h1>Hello, world!</h1></body></html>",
+		"sitemap": {
+			"source": "https://capturekit.dev/sitemap.xml",
+			"totalLinks": 3,
+			"links": [
+				"https://www.capturekit.dev/",
+				"https://www.capturekit.dev/page-content"
+				"https://www.capturekit.dev/ai"
 			]
 		}
 	}
