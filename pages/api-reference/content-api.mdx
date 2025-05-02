@@ -115,6 +115,17 @@ A comma-separated list of elements to hide before capturing (e.g., ads, popups).
 
 ---
 
+**`block_urls`** <small style={{margin:'0 10px'}}>string</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <br/>
+Comma-separated list of URL patterns to block (e.g., "analytics,tracking,advertisement"). You can specify URLs, domains, or simple patterns like "_.example.com/_".
+
+---
+
+**`block_resources`** <small style={{margin:'0 10px'}}>string</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <br/>
+Comma-separated list of resource types to block (e.g., "image,stylesheet,font"). Available resource types:
+`document`, `stylesheet`, `image`, `media`, `font`, `script`, `texttrack`, `xhr`, `fetch`, `eventsource`, `websocket`, `manifest`, `other`. Useful for optimizing page loading speed before capturing web content.
+
+---
+
 **`proxy`** <small style={{margin:'0 10px'}}>string</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <br/>
 Specify a proxy server to route your request through. Supports HTTP, HTTPS, and SOCKS5 proxies. Format: `http://username:password@proxy.com:PORT`. Useful for bypassing geo-restrictions and rotating IPs.
 
