@@ -58,6 +58,18 @@ Your API access key. Can be provided via the `access_key` query parameter, `x-ac
 
 ---
 
+**`custom_response`** <small style={{margin:'0 10px'}}>object | string</small> <small style={{margin:'0 10px 0 0'}}>Optional</small> <br/>
+Pass custom response fields to be included in the AI response. This can be provided in two ways:
+As a JSON object in the request body
+As a JSON stringified object in the query parameters
+
+---
+
+**`custom_prompt`** <small style={{margin:'0 10px'}}>string</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <br/>
+Add your own instructions to guide the AI's analysis.
+
+---
+
 **`proxy`** <small style={{margin:'0 10px'}}>string</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <br/>
 Specify a proxy server to route your request through. Supports HTTP, HTTPS, and SOCKS5 proxies. Format: `http://username:password@proxy.com:PORT`. Useful for bypassing geo-restrictions and rotating IPs.
 
