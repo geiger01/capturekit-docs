@@ -4,8 +4,13 @@ export default {
 	'authentication': 'Authentication',
 	'api-reference': 'API Reference',
 	home: {
-		title: 'Home Page',
+		title: 'Website',
 		type: 'page',
 		href: 'https://www.capturekit.dev',
+	},
+	status: {
+		title: 'Status',
+		type: 'page',
+		href: 'https://status.capturekit.dev',
 	},
 };

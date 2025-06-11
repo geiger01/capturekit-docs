@@ -1,14 +1,8 @@
 import { useConfig } from 'nextra-theme-docs';
 import { Logo } from './components/logo';
-import { useRouter } from 'next/router';
 
 export default {
 	logo: <Logo />,
-	project: {
-		link: 'https://github.com/geiger01/capturekit-docs',
-	},
-	docsRepositoryBase: 'https://github.com/geiger01/capturekit-docs',
-
 	useNextSeoProps() {
 		return {
 			titleTemplate: 'Documentation - CaptureKit',
@@ -47,6 +41,14 @@ export default {
 		);
 	},
 	footer: {
-		text: 'CaptureKit Docs',
+		text: (
+			<span>
+				© {new Date().getFullYear()}{' '}
+				<a href="https://capturekit.com" target="_blank" rel="noopener noreferrer">
+					Capturekit
+				</a>
+				. All rights reserved.
+			</span>
+		),
 	},
 };
