@@ -85,8 +85,8 @@ Include the raw HTML of the webpage in the response.
 
 ---
 
-**`include_sitemap`** <small style={{margin:'0 10px'}}>boolean</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to false</small><br/>
-Include sitemap data of the webpage in the response. You can either enter your sitemap in the `url` field, or we will try to find the sitemap of your website URL.
+**`use_defuddle`** <small style={{margin:'0 10px'}}>boolean</small> <small style={{margin:'0  10px  0 0'}}>Optional</small> <small>Defaults to false</small><br/>
+Use [Defuddle](https://github.com/kepano/defuddle) to clean and extract the main content from web pages. This popular library removes unnecessary elements like comments, sidebars, headers, footers, and other non-essential elements, leaving only the primary content. When enabled, the HTML response will be processed through Defuddle before being returned.
 
 ---
 
